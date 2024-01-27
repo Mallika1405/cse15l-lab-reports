@@ -60,6 +60,7 @@ My code uses 3 methods:
 - `main`:This method is in the ChatServer class andis the entry point of the ChatServer program. It is called when the server application is started.
 
 #### Q2)What are the relevant arguments to those methods, and the values of any relevant fields of the class?
+-hello
 -For `handleRequest(URI url)`:
 The `URI url` part takes in a URL as the argument. The URL in this case would be `https://0-0-0-0-4001-ptlc58ci4hbh3djvp2vh064cj4.us.edusercontent.com/add-message?s=Hello&user=jpolitz`.
 -For `ChatHistory()`:
