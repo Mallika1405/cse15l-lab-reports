@@ -76,6 +76,34 @@ When it comes to local variables, the following variables get updated:
 - `allMessages`: This variable is in the ChatHistory method and is a string that starts as an empty string and accumulates all chat messages from the ArrayList `arr`. After the request, it will hold `jpolitz: Hello\n`.
 In the `ChatServer` class, the main method accepts the port number as `args[0]`.
 
+### iii)Output 2:
+![Code Output2](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%204.49.59%20PM.png)
+
+#### Q1)What methods in your code are called?
+- `handleRequest`:This method is in the Handler class and is called when the server receives a request to the /add-message path.
+- `ChatHistory`:This method is in the Handler class and is called within handleRequest to construct and return the full chat history after a new message is added.
+- `main`:This method is in the ChatServer class andis the entry point of the ChatServer program. It is called when the server application is started.
+
+#### Q2)What are the relevant arguments to those methods, and the values of any relevant fields of the class?
+- For `handleRequest`(URI url):The URI url part takes in a URL as the argument. The URL in this case would be https://0-0-0-0-4000-nou3pmcv69uk2c3jq74t5i6btk.us.edusercontent.com/add-message?s=Hi!How%20are%20you&user=Mallika
+- For `ChatHistory()`: There are no arguments for this method. It iterates over the arr ArrayList filed to build the chat history. 
+- For `main(String [] args)`: This method takes in the arguments from the command-line where `args[0]` is expected to be the port number on which the Server should listen.
+
+#### Q3)How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
+In the `Handler` class, the `arr` ArrayList field initially has the previous message but upon receving the request, the `handleRequest` method parses the query and constructs the message `"Mallika: Hi!How are you"` and adds it to the ArrayList `arr`. 
+When it comes to local variables, the following variables get updated:
+- `query`:This variable will hold the full query string `s=Hi%20How%20are%20you&user=Mallika` extracted from the url.
+- `param`:This array will be populated with the split results of the query string `["s=Hi%20How%20are%20you", "user=Mallika]`.
+- `messageParam`:This variable will hold the message part of the query, `s=Hi%20How%20are%20you`.
+- `userParam`: This variable will hold the user part of the query, `user=Mallika`.
+- `message`:After extracting the substring from messageParam, this will hold `Hi!How+are+you`.
+- `user`:After extracting the substring from userParam, this will hold `Mallika`.
+- `allMessages`: This variable is in the ChatHistory method and is a string that starts as an empty string and accumulates all chat messages from the ArrayList `arr`. After the request, it will hold `jpolitz: Hello\n`, `Mallika: Hi!How+are+you`.
+In the `ChatServer` class, the main method accepts the port number as `args[0]`. This value won't change because the port will be the same until it is changed in the terminal.
+
+
+
+
 
 
 
