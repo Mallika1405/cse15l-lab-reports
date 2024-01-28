@@ -60,13 +60,12 @@ My code uses 3 methods:
 - `main`:This method is in the ChatServer class andis the entry point of the ChatServer program. It is called when the server application is started.
 
 #### Q2)What are the relevant arguments to those methods, and the values of any relevant fields of the class?
--hello
--For `handleRequest(URI url)`:
-The `URI url` part takes in a URL as the argument. The URL in this case would be `https://0-0-0-0-4001-ptlc58ci4hbh3djvp2vh064cj4.us.edusercontent.com/add-message?s=Hello&user=jpolitz`.
--For `ChatHistory()`:
-There are no arguments for this method. It iterates over the `arr` ArrayList filed to build the chat history. 
--For `main(String [] args)`:
-This method takes in the arguments from the command-line where `args[0]` is expected to be the port number on which the Server should listen. 
+For `handleRequest`(URI url):
+-The URI url part takes in a URL as the argument. The URL in this case would be https://0-0-0-0-4001-ptlc58ci4hbh3djvp2vh064cj4.us.edusercontent.com/add-message?s=Hello&user=jpolitz. 
+For `ChatHistory()`: 
+-There are no arguments for this method. It iterates over the arr ArrayList filed to build the chat history. 
+For `main(String [] args)`:
+-This method takes in the arguments from the command-line where args[0] is expected to be the port number on which the Server should listen.
 
 #### Q3)How do the values of any relevant fields of the class change from this specific request? If no values got changed, explain why.
 In the `Handler` class, the `arr` ArrayList field is initially empty but upon receving the request, the `handleRequest` method parses the query and constructs the message `"jpolitz: Hello"` and adds it to the ArrayList `arr`. 
