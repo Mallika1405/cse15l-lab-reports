@@ -109,10 +109,12 @@ In the `ChatServer` class, the main method accepts the port number as `args[0]`.
 ### ii)Public Key using ls
 ![Public Key](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%205.12.49%20PM.png)
 
-### iii) ieng without being asked for a password
+### iii) ieng6 without being asked for a password
 ![No password](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%202.14.04%20PM.png)
 
 ## TASK 3: What I learnt this week
+- During Week 2, I learnt about the URLHandler interface and about the different parts of a URL. I also learnt about what a port is and what ports people usually use to build websites(80 or 443). Addtionally, I learnt how to build my own Server using simple Java Code. I also learnt a few more commands such as `curl` and how I could access URL's using the `curl` command. Building the Search Engine was really interesting!
+- During Week 3, I learnt about using SSH keys for easy access into my course-specific account. I also learnt 2 new comments-`scp` to securely copy and `mkdir` to make a directory. 
 
 
 
