@@ -101,6 +101,18 @@ When it comes to local variables, the following variables get updated:
 - `allMessages`: This variable is in the ChatHistory method and is a string that starts as an empty string and accumulates all chat messages from the ArrayList `arr`. After the request, it will hold `jpolitz: Hello\n`, `Mallika: Hi!How+are+you`.
 In the `ChatServer` class, the main method accepts the port number as `args[0]`. This value won't change because the port will be the same until it is changed in the terminal.
 
+## TASK 2: SSH Key
+
+### i)Private Key using ls
+![Private Key](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%205.11.03%20PM.png)
+
+### ii)Public Key using ls
+![Public Key](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%205.12.49%20PM.png)
+
+### iii) ieng without being asked for a password
+![No password](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%202.14.04%20PM.png)
+
+## TASK 3: What I learnt this week
 
 
 
