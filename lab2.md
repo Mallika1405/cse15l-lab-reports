@@ -16,7 +16,7 @@ class Handler implements URLHandler{
 
             if(messageParam.startsWith("s=") && userParam.startsWith("user=")){
                 String message=messageParam.substring(2);
-                String user=userParam.substring(5);
+                String user=userParam.substring(5);˙
                 arr.add(user+": "+message);
                 return ChatHistory();
 
@@ -51,7 +51,7 @@ class ChatServer{
     }
 ```
 ### ii)Output 1:
-![Code Output1](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%201.25.34%20PM.png)
+![Code Output1](./Screenshot%202024-01-27%20at%201.25.34%20PM.png)
 
 #### Q1)What methods in your code are called?
 My code uses 3 methods:
