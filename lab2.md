@@ -77,7 +77,7 @@ When it comes to local variables, the following variables get updated:
 In the `ChatServer` class, the main method accepts the port number as `args[0]`.
 
 ### iii)Output 2:
-![Code Output2](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%204.49.59%20PM.png)
+![Code Output2](./Screenshot%202024-01-27%20at%204.49.59%20PM.png)
 
 #### Q1)What methods in your code are called?
 - `handleRequest`:This method is in the Handler class and is called when the server receives a request to the /add-message path.
@@ -104,13 +104,13 @@ In the `ChatServer` class, the main method accepts the port number as `args[0]`.
 ## TASK 2: SSH Key
 
 ### i)Private Key using ls
-![Private Key](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%205.11.03%20PM.png)
+![Private Key](./Screenshot%202024-01-27%20at%205.11.03%20PM.png)
 
 ### ii)Public Key using ls
-![Public Key](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%205.12.49%20PM.png)
+![Public Key](./Screenshot%202024-01-27%20at%205.12.49%20PM.png)
 
 ### iii) ieng6 without being asked for a password
-![No password](https://github.com/Mallika1405/cse15l-lab-reports/blob/main/Screenshot%202024-01-27%20at%202.14.04%20PM.png)
+![No password](./Screenshot%202024-01-27%20at%202.14.04%20PM.png)
 
 ## TASK 3: What I learnt this week
 - During Week 2, I learnt about the `URLHandler` interface and about the different parts of a URL. I also learnt about what a `port` is and what ports people usually use to build websites(80 or 443). Addtionally, I learnt how to build my own `Server` using simple Java Code. I also learnt a few more commands such as `curl` and how I could access URL's using the `curl` command. Building the Search Engine was really interesting!
