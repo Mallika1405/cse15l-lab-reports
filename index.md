@@ -2,6 +2,8 @@
 ## 1)Using the `cd` command
 ### i)Using `cd` with no arguments
 When I ran `cd` with no arguments, using the code below,
+This is a test
+
 ```
 [user@sahara ~]$ cd
 ```
