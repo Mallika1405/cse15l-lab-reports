@@ -107,7 +107,7 @@ In the `ChatServer` class, the main method accepts the port number as `args[0]`.
 ![Private Key](./Screenshot%202024-01-27%20at%205.11.03%20PM.png)
 
 ### ii)Public Key using ls
-![Public Key](./Screenshot%202024-01-27%20at%205.12.49%20PM.png)
+![Public Key](./Screenshot%202024-02-06%20at%203.50.04%20PM.png)
 
 ### iii) ieng6 without being asked for a password
 ![No password](./Screenshot%202024-01-27%20at%202.14.04%20PM.png)
