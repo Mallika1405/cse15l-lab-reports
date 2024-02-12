@@ -120,7 +120,9 @@ Conclusion:The bug in this code was the fact that we were returning `sum`/`arr.l
 
 ## Part 2 - Researching Commands
 ### find -type
-#### Output 1:
+The `-type` option allows you to search for files based on their type. The common types include `f` for regular files and `d` for directories.
+#### Example 1:
+Used the `-type f` command to look for all the files in `./technical/911report`.
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical/911report -type f
 ./technical/911report/chapter-13.4.txt
@@ -141,11 +143,11 @@ mallika@Mallikas-MacBook-Air docsearch % find ./technical/911report -type f
 ./technical/911report/chapter-10.txt
 ./technical/911report/chapter-11.txt
 ```
-#### Output 2:
+#### Example 2:
+Used the `-type d` command to look for all the directories in `./technical`.
 ```
-mallika@Mallikas-MacBook-Air docsearch % find ./* -type d
-./Server
-./lib
+mallika@Mallikas-MacBook-Air docsearch % find ./technical -type d
+
 ./technical
 ./technical/government
 ./technical/government/About_LSC
@@ -160,7 +162,9 @@ mallika@Mallikas-MacBook-Air docsearch % find ./* -type d
 ```
 
 ### find -name
-#### Output 1
+The -name option allows searching for files whose name matches a given pattern. This option is case-sensitive.
+#### Example 1
+Used the `-name` option to find files with `.txt` extension in `./technical/911report`.
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical/911report  -name "*.txt"
 
@@ -183,7 +187,8 @@ mallika@Mallikas-MacBook-Air docsearch % find ./technical/911report  -name "*.tx
 ./technical/911report/chapter-11.txt
 ```
 
-#### Output 2
+#### Example 2
+Used the `-name` to find `.txt` files with the word `journal` in the name in `./technical/plos`.
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical -name "journal.*.txt"  
 ./technical/plos/journal.pbio.0030032.txt
@@ -208,7 +213,8 @@ mallika@Mallikas-MacBook-Air docsearch % find ./technical -name "journal.*.txt"
 ./technical/plos/journal.pbio.0020187.txt
 ```
 ### find -size
-#### Output 1
+
+#### Example 1
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical -size +100k
 
