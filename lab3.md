@@ -119,7 +119,7 @@ The test case passed without any duplicate elements as well! The bug has been fi
 Conclusion:The bug in this code was the fact that we were returning `sum`/`arr.length-1` because we did not consider the possiblity of duplicate elements. Now that we did, by counting the duplicate elements and removing those many elements from the array, we found the correct average. 
 
 ## PART 2 - RESEARCHING COMMANDS
-### find `-type`
+### 1) find `-type`
 The `-type` option allows you to search for files based on their type. The common types include `f` for regular files and `d` for directories.
 #### Example 1:
 I used the `-type f` option to look for all the files in `./technical/911report`. It's a more effiencient way of looking for files in `./technical/911report`. 
@@ -162,7 +162,7 @@ mallika@Mallikas-MacBook-Air docsearch % find ./technical -type d
 ```
 Source: https://www.geeksforgeeks.org/find-command-in-linux-with-examples/
 
-### find `-name`
+### 2) find `-name`
 The `-name` option allows searching for files whose name matches a given pattern. This option is case-sensitive.
 #### Example 1
 I used the `-name` option to find files with `.txt` extension in `./technical/911report`. It's a more efficient way of looking for 911 reports. 
@@ -215,7 +215,7 @@ mallika@Mallikas-MacBook-Air docsearch % find ./technical -name "journal.*.txt"
 Source: https://www.redhat.com/sysadmin/linux-find-command
         Class notes
 
-### find `-size`
+### 3) find `-size`
 The `-size` option allows you to search for files by their size. You can specify sizes in blocks, kilobytes (k), megabytes (M), and so on.
 #### Example 1
 I used the `size` option to find files larger than 100KB in `./technical`. This command lists files over 100KB in size within the ./technical directory. It's useful for identifying large files that may need to be compressed or moved.
@@ -284,7 +284,7 @@ mallika@Mallikas-MacBook-Air docsearch % find ./technical -size -2k
 ```
 Source: https://kb.iu.edu/d/admm
 
-### find `-mtime`
+### 4) find `-mtime`
 The `-mtime` option is used to find files modified `n` days ago. The access time is updated whenever the file's contents are changed by any command or program.
 #### Example 1:
 I used the `mtime` option to find files modified 5 days ago in `./technical/911report`. This could be used to find recently modified files. 
