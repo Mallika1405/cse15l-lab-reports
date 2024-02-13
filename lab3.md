@@ -122,7 +122,7 @@ Conclusion:The bug in this code was the fact that we were returning `sum`/`arr.l
 ### find `-type`
 The `-type` option allows you to search for files based on their type. The common types include `f` for regular files and `d` for directories.
 #### Example 1:
-Used the `-type f` option to look for all the files in `./technical/911report`. It's a more effiencient way of looking for files in `./technical/911report`. 
+I used the `-type f` option to look for all the files in `./technical/911report`. It's a more effiencient way of looking for files in `./technical/911report`. 
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical/911report -type f
 ./technical/911report/chapter-13.4.txt
@@ -144,7 +144,7 @@ mallika@Mallikas-MacBook-Air docsearch % find ./technical/911report -type f
 ./technical/911report/chapter-11.txt
 ```
 #### Example 2:
-Used the `-type d` option to look for all the directories in `./technical`. It is used to obtain the directories and look at them together in order to find something. 
+I used the `-type d` option to look for all the directories in `./technical`. It is used to obtain the directories and look at them together in order to find something. 
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical -type d
 
@@ -165,7 +165,7 @@ Source: https://www.geeksforgeeks.org/find-command-in-linux-with-examples/
 ### find `-name`
 The `-name` option allows searching for files whose name matches a given pattern. This option is case-sensitive.
 #### Example 1
-Used the `-name` option to find files with `.txt` extension in `./technical/911report`. It's a more efficient way of looking for 911 reports. 
+I used the `-name` option to find files with `.txt` extension in `./technical/911report`. It's a more efficient way of looking for 911 reports. 
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical/911report  -name "*.txt"
 
@@ -188,7 +188,7 @@ mallika@Mallikas-MacBook-Air docsearch % find ./technical/911report  -name "*.tx
 ./technical/911report/chapter-11.txt
 ```
 #### Example 2
-Used the `-name` to find `.txt` files with the word `journal` in the name in `./technical/plos`. It's useful for finding the journal files. 
+I used the `-name` to find `.txt` files with the word `journal` in the name in `./technical/plos`. It's useful for finding the journal files. 
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical -name "journal.*.txt"  
 ./technical/plos/journal.pbio.0030032.txt
@@ -218,7 +218,7 @@ Source: https://www.redhat.com/sysadmin/linux-find-command
 ### find `-size`
 The `-size` option allows you to search for files by their size. You can specify sizes in blocks, kilobytes (k), megabytes (M), and so on.
 #### Example 1
-Used the `size` option to find files larger than 100KB in `./technical`. This command lists files over 100KB in size within the ./technical directory. It's useful for identifying large files that may need to be compressed or moved.
+I used the `size` option to find files larger than 100KB in `./technical`. This command lists files over 100KB in size within the ./technical directory. It's useful for identifying large files that may need to be compressed or moved.
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical -size +100k
 
@@ -253,7 +253,7 @@ mallika@Mallikas-MacBook-Air docsearch % find ./technical -size +100k
 ./technical/911report/chapter-12.txt
 ```
 #### Example 2
-Used the `size` option to find files less than 2KB in `./technical`. It's useful for locating small files for quick processing or review.
+I used the `size` option to find files less than 2KB in `./technical`. It's useful for locating small files for quick processing or review.
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical -size -2k
 
@@ -287,7 +287,7 @@ Source: https://kb.iu.edu/d/admm
 ### find `-mtime`
 The `-mtime` option is used to find files modified `n` days ago. The access time is updated whenever the file's contents are changed by any command or program.
 #### Example 1:
-Used the `mtime` option to find files modified 5 days ago in `./technical/911report`. This could be used to find recently modified files. 
+I used the `mtime` option to find files modified 5 days ago in `./technical/911report`. This could be used to find recently modified files. 
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical/911report  -mtime -5
 ./technical/911report
@@ -310,7 +310,7 @@ mallika@Mallikas-MacBook-Air docsearch % find ./technical/911report  -mtime -5
 ./technical/911report/chapter-11.txt
 ```
 #### Example 2:
-Used the `mtime` option to find files modified more than 2 days ago in `./technical/plos`. This could be used to find files that were modified a while ago. 
+I used the `mtime` option to find files modified more than 2 days ago in `./technical/plos`. This could be used to find files that were modified a while ago. 
 ```
 mallika@Mallikas-MacBook-Air docsearch % find ./technical/plos  -mtime +2 
 
