@@ -87,7 +87,7 @@ This opened the ListExamples.java file in the command line and allowed me to edi
 ```
 This gave me all the line numbers of the code and my code now looked like this:
 ```
- 1 import java.util.ArrayList;
+  1 import java.util.ArrayList;
   2 import java.util.List;
   3 
   4 interface StringChecker { boolean checkString(String s); }
@@ -139,7 +139,8 @@ This gave me all the line numbers of the code and my code now looked like this:
  50 }
  51 
 ```
-
+This made it much easier to understand the line numbers. Another command I used to reach the line with the bug(line 44) was `43j`. When my curosr was on line 1, the command `43j <enter>` moved the cursor down by 43 lines and it reached line 44. 
+The bug in the code was that 
 
 
 
