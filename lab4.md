@@ -141,7 +141,60 @@ This gave me all the line numbers of the code and my code now looked like this:
 ```
 This made it much easier to understand the line numbers. Another command I used to reach the line with the bug(line 44) was `43j`. When my curosr was on line 1, the command `43j <enter>` moved the cursor down by 43 lines and it reached line 44. 
 
-The bug in the code was that `index2` was not getting incremented in the last `while` loop and it was incrementing `index1` instead which should not have been the case. 
+The bug in the code was that `index2` was not getting incremented in the last `while` loop and it was incrementing `index1` instead which should not have happened. So I fixed the bug by changing `index1` to `index2`. 
+```
+  1 import java.util.ArrayList;
+  2 import java.util.List;
+  3 
+  4 interface StringChecker { boolean checkString(String s); }
+  5 
+  6 class ListExamples {
+  7 
+  8   // Returns a new list that has all the elements of the input list for which
+  9   // the StringChecker returns true, and not the elements that return false, in
+ 10   // the same order they appeared in the input list;
+ 11   static List<String> filter(List<String> list, StringChecker sc) {
+ 12     List<String> result = new ArrayList<>();
+ 13     for(String s: list) {
+ 14       if(sc.checkString(s)) {
+ 15         result.add(0, s);
+ 16       }
+ 17     }
+ 18     return result;
+ 19   }
+ 20 
+ 21 
+ 22   // Takes two sorted list of strings (so "a" appears before "b" and so on),
+ 23   // and return a new list that has all the strings in both list in sorted order.
+ 24   static List<String> merge(List<String> list1, List<String> list2) {
+ 25     List<String> result = new ArrayList<>();
+ 26     int index1 = 0, index2 = 0;
+ 27     while(index1 < list1.size() && index2 < list2.size()) {
+ 28       if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
+ 29         result.add(list1.get(index1));
+ 30         index1 += 1;
+ 31       }
+ 32       else {
+ 33         result.add(list2.get(index2));
+ 34         index2 += 1;
+ 35       }
+ 36         }
+ 37     while(index1 < list1.size()) {
+ 38       result.add(list1.get(index1));
+ 39       index1 += 1;
+ 40     }
+ 41     while(index2 < list2.size()) {
+ 42       result.add(list2.get(index2));
+ 43       // change index1 below to index2 to fix test
+ 44       index2 += 1;
+ 45     }
+ 46     return result;
+ 47   }
+ 48 
+ 49 
+ 50 }
+ 51 
+```
 
 
 
