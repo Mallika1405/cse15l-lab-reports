@@ -140,7 +140,8 @@ This gave me all the line numbers of the code and my code now looked like this:
  51 
 ```
 This made it much easier to understand the line numbers. Another command I used to reach the line with the bug(line 44) was `43j`. When my curosr was on line 1, the command `43j <enter>` moved the cursor down by 43 lines and it reached line 44. 
-The bug in the code was that 
+
+The bug in the code was that `index2` was not getting incremented in the last `while` loop and it was incrementing `index1` instead which should not have been the case. 
 
 
 
