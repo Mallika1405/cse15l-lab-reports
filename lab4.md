@@ -31,7 +31,7 @@ or "prep -h" for more options.
 [mdasgupta@ieng6-201]:~:82$
 ```
 ### Step 2: Clone your fork of the repository from your Github account (using the SSH URL)
-For this step, I used the `git clone` command and for the SSH url(`git@github.com:Mallika1405/lab7.git`), I used the `command+c` and `command+v` keys on the keyboard. I pressed `<enter>` to get:
+For this step, I used the `git clone` command and for the SSH url(`git@github.com:Mallika1405/lab7.git`), I used the `Command-c` and `Command-v` keys on the keyboard. I pressed `<enter>` to get:
 ```
 [mdasgupta@ieng6-201]:~:116$ git clone git@github.com:Mallika1405/lab7.git
 Cloning into 'lab7'...
@@ -141,7 +141,7 @@ This gave me all the line numbers of the code and my code now looked like this:
 ```
 This made it much easier to understand the line numbers. Another command I used to reach the line with the bug(line 44) was `43j`. When my curosr was on line 1, the command `43j <enter>` moved the cursor down by 43 lines and it reached line 44. 
 
-The bug in the code was that `index2` was not getting incremented in the last `while` loop and it was incrementing `index1` instead which should not have happened. So I fixed the bug by changing `index1` to `index2`. 
+The bug in the code was that `index2` was not getting incremented in the last `while` loop and it was incrementing `index1` instead which should not have happened. So I fixed the bug by changing `index1` to `index2`. I did that by moving the `<right>` arrow key 11 times till I reached the `1` character in the word `index1`. I then used the `x` key to delete the `1`. I used the `i` key to insert 2 in that position and then used `<escape>` to escape the `insert` mode. This was the code after editing:
 ```
   1 import java.util.ArrayList;
   2 import java.util.List;
@@ -195,6 +195,19 @@ The bug in the code was that `index2` was not getting incremented in the last `w
  50 }
  51 
 ```
+After fixing the code, I used `<escape>` and `:wq` to save changes and exit `vim`. 
+
+### Step 5: Run the tests, demonstrating that they now succeed
+I used `<up> <up>` or the `<up>` arrow twice, followed by `<enter>` to get the `bash` command I had previously used- `bash test.sh`. 
+I got the following output:
+```
+JUnit version 4.13.2
+..
+Time: 0.015
+
+OK (2 tests)
+```
+
 
 
 
