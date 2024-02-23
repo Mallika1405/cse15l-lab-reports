@@ -77,6 +77,70 @@ FAILURES!!!
 Tests run: 2,  Failures: 1
 ```
 ### Step 4: Edit the code file to fix the failing test
+To edit the file in the terminal, I used the `vim` file editor. I ran the following command:
+```
+vim ListExamples.java
+```
+This opened the ListExamples.java file in the command line and allowed me to edit it. While editing it, I tried using the <down> arrow key 37 times in order to reach the line with the bug. However, I soon realised that that was not efficient. I then did the following:
+```
+<escape> :set number
+```
+This gave me all the line numbers of the code and my code now looked like this:
+```
+ 1 import java.util.ArrayList;
+  2 import java.util.List;
+  3 
+  4 interface StringChecker { boolean checkString(String s); }
+  5 
+  6 class ListExamples {
+  7 
+  8   // Returns a new list that has all the elements of the input list for which
+  9   // the StringChecker returns true, and not the elements that return false, in
+ 10   // the same order they appeared in the input list;
+ 11   static List<String> filter(List<String> list, StringChecker sc) {
+ 12     List<String> result = new ArrayList<>();
+ 13     for(String s: list) {
+ 14       if(sc.checkString(s)) {
+ 15         result.add(0, s);
+ 16       }
+ 17     }
+ 18     return result;
+ 19   }
+ 20 
+ 21 
+ 22   // Takes two sorted list of strings (so "a" appears before "b" and so on),
+ 23   // and return a new list that has all the strings in both list in sorted order.
+ 24   static List<String> merge(List<String> list1, List<String> list2) {
+ 25     List<String> result = new ArrayList<>();
+ 26     int index1 = 0, index2 = 0;
+ 27     while(index1 < list1.size() && index2 < list2.size()) {
+ 28       if(list1.get(index1).compareTo(list2.get(index2)) < 0) {
+ 29         result.add(list1.get(index1));
+ 30         index1 += 1;
+ 31       }
+ 32       else {
+ 33         result.add(list2.get(index2));
+ 34         index2 += 1;
+ 35       }
+ 36         }
+ 37     while(index1 < list1.size()) {
+ 38       result.add(list1.get(index1));
+ 39       index1 += 1;
+ 40     }
+ 41     while(index2 < list2.size()) {
+ 42       result.add(list2.get(index2));
+ 43       // change index1 below to index2 to fix test
+ 44       index1 += 1;
+ 45     }
+ 46     return result;
+ 47   }
+ 48 
+ 49 
+ 50 }
+ 51 
+```
+
+
 
 
 
