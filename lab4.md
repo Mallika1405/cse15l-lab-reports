@@ -273,7 +273,9 @@ To github.com:Mallika1405/lab7.git
 3) `bash` to be able to run the `bash` file.
 4) `vim` to open the vim editor on the file.
 5) `:wq` to save changes and quit vim.
-6) `:q!` to quit vim. 
+6) `:q!` to quit vim.
+7) `git commit` opens up vim, waiting for edits and commits changes to git.
+8) `git push` pushes changes to origin. 
 
 
 
