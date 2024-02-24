@@ -259,8 +259,21 @@ To github.com:Mallika1405/lab7.git
    327ab1a..ed04783  main -> main
 ```
 ### Summary
+#### Keypresses:
+1) `<enter>` key was used to run a command after entering it into the terminal. 
+2) `<up>` arrow key was used either to retrieve an old command from the command history in the terminal or it was used to navigate to a specific line in vim. 
+3) `<down>` arrow key was used either to go back to a command that you have passed before from the command history in the terminal or to navigate to a specific line in vim. 
+4) `<escape>` was used to exit a certain mode in vim like the inert mode. 
+5) `x` was used to delete an element in vim. 
+6) `i` was used to insert an element in vim. 
 
-
+#### Commands:
+1) `git clone` was used to clone the repository.
+2) `cd` to be able to access the files in the directory.
+3) `bash` to be able to run the `bash` file.
+4) `vim` to open the vim editor on the file.
+5) `:wq` to save changes and quit vim.
+6) `:q!` to quit vim. 
 
 
 
