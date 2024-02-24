@@ -209,6 +209,58 @@ OK (2 tests)
 ```
 
 ### Step 6: Commit and push the resulting change to your Github account (you can pick any commit message!)
+In order to commit to git, I used the command `git commit -a`. It then prompted me to enter a commit message as follows:
+```
+
+Fixed it!
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: Mallika Dasgupta <mdasgupta@ieng6-203.ucsd.edu>
+#
+# On branch main
+# Your branch is up to date with 'origin/main'.
+#
+# Changes to be committed:
+#       modified:   ListExamples.java
+#
+```
+I entered `Fixed it!` as my commit message. This was the summary it gave me once I finished. 
+```
+[mdasgupta@ieng6-203]:lab7:134$ git commit -a
+[main ed04783] Fixed it!
+ Committer: Mallika Dasgupta <mdasgupta@ieng6-203.ucsd.edu>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+```
+It showed that I edited one file, `ListExamples.java` and made one insertion and one deletion. 
+I used the `git push` to push changes to origin as follows:
+```
+[mdasgupta@ieng6-203]:lab7:135$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 297 bytes | 148.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:Mallika1405/lab7.git
+   327ab1a..ed04783  main -> main
+```
+### Summary
+
+
 
 
 
