@@ -13,7 +13,8 @@ use --help for a list of possible options
 Could you please help me fix it?
 
 **Obi-Wan Kenobi**: There may be a few things wrong with what you have done. Firstly, do you think you're in the correct directory? Do you think you need to use the `cd` command somewhere? Secondly, do you think you can make use of `shell` files somewhere? 
-**Anakin Skywalker**: Yes! I forgot I had to `cd` into the `chat-server` directory and run the `test.sh` file using `bash` command. Here are my commands:
+
+**Anakin Skywalker**: Yes! I may have forgotten to `cd` into the `chat-server` directory and run the `test.sh` file using `bash` command. Here are my commands:
 ```
 coder@a50d74bf837e:~$ cd chat-server/
 ```
@@ -37,3 +38,85 @@ org.junit.ComparisonFailure: expected:<[edwin: happy friday!
 FAILURES!!!
 Tests run: 3,  Failures: 1
 ```
+
+**Obi-Wan Kenobi**: Yes! This means that there is an error somewhere in your file. Can you find the error now?
+
+**Anakin Skywalker**: I am not being able to find the error in the `ChatServer` file. The code seems correct with me. Do you think you could help me please? This is the code in the `ChatServer.java` file:
+```
+import java.io.IOException;
+import java.net.URI;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+
+class ChatHandler implements URLHandler {
+  String chatHistory = "";
+
+  public String handleRequest(URI url) {
+
+    // expect /chat?user=<name>&message=<string>
+    if (url.getPath().equals("/chat")) {
+      String[] params = url.getQuery().split("&");
+      String[] shouldBeUser = params[0].split("=");
+      String[] shouldBeMessage = params[1].split("=");
+      if (shouldBeUser[0].equals("user") && shouldBeMessage[0].equals("message")) {
+        String user = shouldBeUser[1];
+        String message = shouldBeMessage[1];
+        this.chatHistory += user + ": " + message + "\n\n";
+        return this.chatHistory;
+      } else {
+        return "Invalid parameters: " + String.join("&", params);
+      }
+    }
+    // expect /retrieve-history?file=<name>
+    else if (url.getPath().equals("/retrieve-history")) {
+      String[] params = url.getQuery().split("&");
+      String[] shouldBeFile = params[0].split("=");
+      if (shouldBeFile[0].equals("file")) {
+        String fileName = shouldBeFile[1];
+        // String fileName = shouldBeFileName[0]; // bug4: should be shouldBeFile[1]
+        ChatHistoryReader reader = new ChatHistoryReader();
+        try {
+          String[] contents = reader.readFileAsArray("chathistory/" + fileName);
+          for (String line : contents) {
+            this.chatHistory += line + "\n\n";
+          }
+        } catch (IOException e) {
+          System.err.println("Error reading file: " + e.getMessage());
+        }
+      }
+      return this.chatHistory;
+    }
+    // expect /save?name=<name>
+    else if (url.getPath().equals("/save")) {
+      String[] params = url.getQuery().split("&");
+      String[] shouldBeFileName = params[0].split("=");
+      if (shouldBeFileName[0].equals("name")) {
+        File directory = new File("chathistory");
+        File file = new File(directory, shouldBeFileName[1]);
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+          writer.write(this.chatHistory);
+          return "Data written to " + shouldBeFileName[1] + "in 'chat-history' folder.";
+        } catch (IOException e) {
+          e.printStackTrace();
+          return "Error: Something wrong happen during file save, check StackTrace";
+        }
+      }
+    }
+
+    return "404 Not Found";
+  }
+}
+
+class ChatServer {
+  public static void main(String[] args) throws IOException {
+    int port = Integer.parseInt(args[0]);
+    Server.start(port, new ChatHandler());
+  }
+}
+```
+
+**Obi-Wan Kenobi**: The code in the file seems correct. Have you checked your test methods?
+
+**Anakin Skywalker**: No I did not think of that! I checked my test files and it appears there was an error in the second test method `handleRequest2`. I accidentally put the URL as `"http://localhost:4000/chat?user=edwin&message=happy%20friday!"`
