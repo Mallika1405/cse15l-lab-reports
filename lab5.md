@@ -119,4 +119,11 @@ class ChatServer {
 
 **Obi-Wan Kenobi**: The code in the file seems correct. Have you checked your test methods?
 
-**Anakin Skywalker**: No I did not think of that! I checked my test files and it appears there was an error in the second test method `handleRequest2`. I accidentally put the URL as `"http://localhost:4000/chat?user=edwin&message=happy%20friday!"`
+**Anakin Skywalker**: No I did not think of that! I checked my test files and it appears there was an error in the second test method `handleRequest2`. I accidentally put the URL as `"http://localhost:4000/chat?name=edwin&message=happy%20friday!"` where I put `name=edwin` instead of `user=edwin`. The correct URL was supposed to be `"http://localhost:4000/chat?user=edwin&message=happy%20friday!"`. I got the following output:
+```
+...
+Time: 0.296
+
+OK (3 tests)
+```
+The tests passed successfully! Thank you so much Obi-Wan!
