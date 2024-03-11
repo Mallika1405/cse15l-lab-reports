@@ -232,3 +232,5 @@ hamcrest-core-1.3.jar  junit-4.13.2.jar
 
 **Obi-Wan Kenobi**: Thank you Anakin!
 
+## PART 2-REFLECTION
+In the second half of the quarter I learnt a lot about `vim`. Initially I thought it was inconvenient to use but as I went deeper and learnt more about the different commands you could use, I started enjoying using the `vim` text editor! I also learnt a lot about using `jdb` and different commands I could use to debug my program. This process made debugging a lot easier. However, my favorite part about the second half of the quarter was learning how `gradescope` works and how our code gets checked for errors!
