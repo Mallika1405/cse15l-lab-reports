@@ -119,7 +119,85 @@ class ChatServer {
 
 **Obi-Wan Kenobi**: The code in the file seems correct. Have you checked your test methods?
 
-**Anakin Skywalker**: No I did not think of that! I checked my test files and it appears there was an error in the second test method `handleRequest2`. I accidentally put the URL as `"http://localhost:4000/chat?name=edwin&message=happy%20friday!"` where I put `name=edwin` instead of `user=edwin`. The correct URL was supposed to be `"http://localhost:4000/chat?user=edwin&message=happy%20friday!"`. I got the following output:
+**Anakin Skywalker**: No I did not think of that! I checked my test files and it appears there was an error in the second test method `handleRequest2`. This is the code of the test methods.
+```
+import static org.junit.Assert.*;
+import org.junit.*;
+import java.net.URI;
+
+public class HandlerTests {
+  @Test
+  public void handleRequest1() throws Exception {
+    ChatHandler h = new ChatHandler();
+    String url = "http://localhost:4000/chat?user=joe&message=hi";
+    URI input = new URI(url);
+    String expected = "joe: hi\n\n";
+    assertEquals(expected, h.handleRequest(input));
+  }
+
+  @Test
+  public void handleRequest2() throws Exception {
+    ChatHandler h = new ChatHandler();
+    // NOTE: %20 is the way to put a space in the parameters of a URL
+    String url = "http://localhost:4000/chat?name=edwin&message=happy%20friday!";
+    URI input = new URI(url);
+    String expected = "edwin: happy friday!\n\n";
+    assertEquals(expected, h.handleRequest(input));
+  }
+
+  @Test
+  public void handleRequestMulti() throws Exception {
+    ChatHandler h = new ChatHandler();
+    String url1 = "http://localhost:4000/chat?user=onat&message=good%20luck";
+    String url2 = "http://localhost:4000/chat?user=edwin&message=with%20your%20demo!";
+    URI input1 = new URI(url1);
+    URI input2 = new URI(url2);
+    String expected = "onat: good luck\n\nedwin: with your demo!\n\n";
+    h.handleRequest(input1);
+    assertEquals(expected, h.handleRequest(input2));
+  }
+}
+```
+I accidentally put the URL as `"http://localhost:4000/chat?name=edwin&message=happy%20friday!"` where I put `name=edwin` instead of `user=edwin`. The correct URL was supposed to be `"http://localhost:4000/chat?user=edwin&message=happy%20friday!"`. This is the corrected code:
+```
+import static org.junit.Assert.*;
+import org.junit.*;
+import java.net.URI;
+
+public class HandlerTests {
+  @Test
+  public void handleRequest1() throws Exception {
+    ChatHandler h = new ChatHandler();
+    String url = "http://localhost:4000/chat?user=joe&message=hi";
+    URI input = new URI(url);
+    String expected = "joe: hi\n\n";
+    assertEquals(expected, h.handleRequest(input));
+  }
+
+  @Test
+  public void handleRequest2() throws Exception {
+    ChatHandler h = new ChatHandler();
+    // NOTE: %20 is the way to put a space in the parameters of a URL
+    String url = "http://localhost:4000/chat?user=edwin&message=happy%20friday!";
+    URI input = new URI(url);
+    String expected = "edwin: happy friday!\n\n";
+    assertEquals(expected, h.handleRequest(input));
+  }
+
+  @Test
+  public void handleRequestMulti() throws Exception {
+    ChatHandler h = new ChatHandler();
+    String url1 = "http://localhost:4000/chat?user=onat&message=good%20luck";
+    String url2 = "http://localhost:4000/chat?user=edwin&message=with%20your%20demo!";
+    URI input1 = new URI(url1);
+    URI input2 = new URI(url2);
+    String expected = "onat: good luck\n\nedwin: with your demo!\n\n";
+    h.handleRequest(input1);
+    assertEquals(expected, h.handleRequest(input2));
+  }
+}
+```
+This was the output I got:
 ```
 ...
 Time: 0.296
@@ -127,3 +205,30 @@ Time: 0.296
 OK (3 tests)
 ```
 The tests passed successfully! Thank you so much Obi-Wan!
+
+**Obi-Wan Kenobi**: I'm glad it worked Anakin! Would you mind sending me your file structure?
+
+**Anakin Skywalker**: Sure. Here is my file structure:
+```
+coder@a50d74bf837e:~$ ls -R
+.:
+chat-server       root-output.txt       test-success-output.txt
+query-output.txt  test-fail-output.txt
+
+./chat-server:
+ChatHandler.class        HandlerTests.class       session.log
+chathistory              HandlerTests.java        test-fail-output.txt
+ChatHistoryReader.class  lib                      test.sh
+ChatHistoryReader.java   Server.class             URLHandler.class
+ChatServer.class         ServerHttpHandler.class
+ChatServer.java          Server.java
+
+./chat-server/chathistory:
+chathistory1.txt  chathistory2.txt  chathistory3.txt
+
+./chat-server/lib:
+hamcrest-core-1.3.jar  junit-4.13.2.jar
+```
+
+**Obi-Wan Kenobi**: Thank you Anakin!
+
